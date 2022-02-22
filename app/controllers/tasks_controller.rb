@@ -14,10 +14,11 @@ class TasksController < ApplicationController
   end
 
   def show
-    @task = Task.find(params[:id])
+    find_task
   end
 
   def edit
+    find_task
   end
 
   def update
@@ -30,5 +31,9 @@ class TasksController < ApplicationController
 
   def task_params
     params.require(:task).permit(:title, :details, :completed)
+  end
+
+  def find_task
+    @task = Task.find(params[:id])
   end
 end
