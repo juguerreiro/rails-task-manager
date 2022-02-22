@@ -1,0 +1,7 @@
+<h1>....</h1>
+
+<%= simple_form_for(@task) do |t| %>
+  <%= t.input :title, input_html: { class: 'special' } %>
+  <%= t.input :details, input_html: { class: 'special' } %>
+  <%= t.submit %>
+  <% end %>
